@@ -1,5 +1,12 @@
-﻿namespace DotNetCoreMvcCrud.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
-public class ApplicationDbContext
+namespace DotNetCoreMvcCrud.Data.Models;
+
+public class ApplicationDbContext: DbContext
 {
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
+    {
+        
+    }
+    public DbSet<Person> People { get; set; }
 }
