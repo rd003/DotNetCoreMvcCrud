@@ -1,0 +1,40 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "Update Person";
+}
+
+<div style="width:50%">
+    <h2>UpdatePerson</h2>
+    <a asp-action="Index" asp-controller="Person" class="btn btn-info">Back</a>
+
+    <form asp-action="UpdatePerson">
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label>Name*</label>
+            <input type="text" class="form-control" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Email*</label>
+            <input type="text" class="form-control" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+
+
+
+        <div class="mb-3">
+            <label>Address*</label>
+            <textarea class="form-control" asp-for="Address"> </textarea>
+            <span class="text-danger" asp-validation-for="Address"></span>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+
+</div>
+
+
+

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "People";
+}
+
+<h2>People</h2>
+@* <a href="Person/AddPerson" class="btn btn-info">Add More</a> *@
+<a asp-action="AddPerson" asp-asp-controller="Person" class="btn btn-info">Add More</a>
+
+<table class="table table-striped mt-2">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach(var person in Model)
+    {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Email</td>
+            <td>@person.Address</td>
+            <td>
+                <a asp-action="UpdatePerson" asp-controller="Person" asp-route-id="@person.Id" class="btn btn-success">Edit</a>
+                <a asp-action="DeletePerson" asp-controller="Person" asp-route-id="@person.Id" class="btn btn-danger" onclick="return window.confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
