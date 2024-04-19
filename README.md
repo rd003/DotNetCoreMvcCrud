@@ -17,9 +17,12 @@ CRUD app with .net core mvc
 - Go to the directory where you have cloned this project, open the directory `BookShoppingCart-Mvc`. You will find a file with name `BookShoppingCartMvc.sln`. Double click on this file and this project will be opened in Visual Studio.
 
 - Open `appsettings.json` file and update connection string
-  "ConnectionStrings": {
-    "conn": "data source=your_server_name;initial catalog=MovieStoreMvc; integrated security=true;encrypt=false"
-  }
+  
+  ```
+    "ConnectionStrings": {
+     "conn": "data source=your_server_name;initial catalog=MovieStoreMvc; integrated security=true;encrypt=false"
+    }
+  ```
 
 - Delete Migrations folder
 
