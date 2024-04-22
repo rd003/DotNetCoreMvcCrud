@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("default")));
-builder.Services.AddTransient<ApplicationDbContext>();
+//builder.Services.AddTransient<ApplicationDbContext>(); //this line is not needed.
 builder.Services.AddTransient<IPersonRepository,PersonRepository>();
 
 var app = builder.Build();
